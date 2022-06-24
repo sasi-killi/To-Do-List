@@ -1,0 +1,75 @@
+.list-container{
+  display: flex;
+  background-color: pink;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.list {
+  margin-right: auto;
+}
+button{
+  margin: 10px;
+  height: 3em;
+  align-self: center;
+  border-radius: 15px;
+  padding: 0px 1em;
+  color: white;
+  cursor: pointer;
+}
+button:hover{
+  background-color: black;
+}
+.done{
+background-color: green;
+}
+.remove{
+  background-color: red;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  width: 80%;
+  height: 100%;
+}
+.search-box{
+  width:100%;
+  height: 3em;
+  border-radius: 15px;
+  margin: 10px 0px;
+}
+.input-box{
+  width: 100%;
+}
+.Add-Button{
+  background-color: brown;
+  margin-left: 10px;
+}
+.text-container{
+  display: flex;
+}
+.title-bar{
+  display: flex;
+}
+.title-bar h1{
+  margin: auto;
+}
+.linethrough p {
+  text-decoration: line-through black 4px;
+}
+.list p:first-child{
+ text-align: justify;
+}
+.App{
+  padding: 2em;
+  background-color: red;
+}
+.edit{
+  background-color: blueviolet;
+}
+body{
+  margin: 0px;
+  background-color: red;
+}

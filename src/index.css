@@ -1,12 +1,13 @@
 .list-container{
   display: flex;
-  background-color: pink;
+  background-color: black;
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 10px;
 }
 .list {
   margin-right: auto;
+  color: white;
 }
 button{
   margin: 10px;
@@ -64,12 +65,15 @@ background-color: green;
 }
 .App{
   padding: 2em;
-  background-color: red;
+  background-color: grey;
 }
 .edit{
   background-color: blueviolet;
 }
 body{
   margin: 0px;
-  background-color: red;
+  background-color: grey;
+}
+.title-bar h1{
+  color: white;
 }

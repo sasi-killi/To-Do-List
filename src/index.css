@@ -1,22 +1,18 @@
-.list-container{
-  display: flex;
-  /*animation: slide 1s cubic-bezier(.53,.16,.43,.79) forwards;*/
-}
 .remove-animation{
-  animation: slide 1s cubic-bezier(.53,.16,.43,.79) forwards;
+  animation: slide 0.7s cubic-bezier(.53,.16,.43,.79) forwards;
 }
 .list {
   margin-right: auto;
   color: #000000;
   border: 1px solid black;
   background-color: #cccccc;
-  width: 80%;
+  /*width: 80%;*/
   border-radius: 15px;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 0px 10px;
+  /*margin-bottom: 10px;*/
 }
 button{
-  margin: 10px;
+  margin: 0px 10px;
   height: 3em;
   align-self: center;
   border-radius: 15px;
@@ -25,9 +21,6 @@ button{
   cursor: pointer;
   box-shadow: inset;
   border: none;
-}
-button:hover{
-  background: #000000;
 }
 .done{
 background-color: #00b359;
@@ -60,6 +53,8 @@ background-color: #00b359;
 }
 .text-container{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .title-bar{
   display: flex;
@@ -71,7 +66,7 @@ background-color: #00b359;
   text-decoration: line-through #000000 2px;
 }
 .list p:first-child{
- text-align: justify;
+ text-align: left;
 }
 .App{
   padding: 2em;
@@ -92,15 +87,15 @@ body{
 }
 
 .button-container{
-  display: flex;
-  align-items: center;
-  border: 1px solid black;
-  background-color: #404040;
+  /*background-color: #404040;*/
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 10px;
-  width: 15%;
+  text-align: center;
   /*flex-wrap: wrap;*/
+}
+.list p:nth-child(2){
+  opacity: 0.6;
 }
 
 @keyframes zoom {
@@ -111,4 +106,41 @@ body{
 @keyframes slide {
   from{}
   to{transform: translateX(calc(100% + 200px))}
+}
+
+@media screen and (min-width: 700px) {
+  .button-container{
+    display: flex;
+    align-items: center;
+    background-color: #404040;
+  }
+  .list {
+    width: 80%;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  .list-container{
+    display: flex;
+  }
+  button{
+    margin:10px;
+  }
+  button:hover{
+    background: #000000;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .list p{
+    margin: 0px;
+  }
+  .list{
+    padding: 10px;
+  }
+  img{
+    height: 50px;
+  }
+  .Add-Button{
+    margin: 10px;
+  }
 }

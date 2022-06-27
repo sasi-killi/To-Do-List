@@ -72,7 +72,7 @@ class Functionality extends Component {
       return item.id !== id;
     });
 
-    setTimeout(() => this.setState({ todoitems: todoitems }), 1000);
+    setTimeout(() => this.setState({ todoitems: todoitems }), 700);
   };
 
   handleToggle = (e) => {

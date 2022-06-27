@@ -5,18 +5,15 @@ class Done extends Component {
     buttontext: "Done",
   };
 
-  handleDone = (e) => {
+  handleDone = () => {
     const text = this.state.buttontext === "Done" ? "Undo" : "Done";
-    const container = e.target.closest(".list-container");
-    this.state.buttontext === "Done"
-      ? container.classList.add("linethrough")
-      : container.classList.remove("linethrough");
+    this.props.handleStrike(this.props.item.id);
     this.setState({ buttontext: text });
   };
 
   render() {
     return (
-      <button className="done" onClick={(e) => this.handleDone(e)}>
+      <button className="done" onClick={() => this.handleDone()}>
         {this.state.buttontext}
       </button>
     );

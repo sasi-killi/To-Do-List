@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Done from "./Done";
 
 class List extends Component {
+  handleAnimation = (id) => {};
   render() {
     const toggle = this.props.toggle;
     const searchValue = this.props.searchValue;
@@ -15,15 +16,23 @@ class List extends Component {
       });
     }
     const listitmes = todoitems.map((item) => (
-      <div className="list-container" key={item.id} data-key={item.id}>
-        <span className="list">
+      <div
+        className={
+          item.remove ? "list-container remove-animation" : "list-container"
+        }
+        key={item.id}
+        data-key={item.id}
+      >
+        <div className={item.done ? "list linethrough" : "list"}>
           <p>{item.text}</p>
           <p>created on {item.time}</p>
-        </span>
-        <Done />
-        <button className="remove" onClick={(e) => handleDelete(e)}>
-          Remove
-        </button>
+        </div>
+        <div className="button-container">
+          <Done item={item} handleStrike={this.props.handleStrike} />
+          <button className="remove" onClick={() => handleDelete(item.id)}>
+            Remove
+          </button>
+        </div>
       </div>
     ));
     return <>{listitmes}</>;

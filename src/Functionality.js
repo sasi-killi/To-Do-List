@@ -55,18 +55,24 @@ class Functionality extends Component {
       id: this.state.todoitems.length + 1,
       text: text,
       done: false,
-      remove: false,
       time: new Date().toLocaleString(),
     };
     this.setState({ todoitems: [...this.state.todoitems, item] });
   };
 
-  handleDelete = (e) => {
-    const key = +e.target.closest(".list-container").getAttribute("data-key");
-    const todoitems = this.state.todoitems.filter((item) => {
-      return item.id !== key;
+  handleDelete = (id) => {
+    let temp_items = this.state.todoitems.map((item) => {
+      if (item.id === id) {
+        item.remove = !item.remove;
+      }
+      return item;
     });
-    this.setState({ todoitems: todoitems });
+    this.setState({ todoitems: temp_items });
+    const todoitems = this.state.todoitems.filter((item) => {
+      return item.id !== id;
+    });
+
+    setTimeout(() => this.setState({ todoitems: todoitems }), 700);
   };
 
   handleToggle = (e) => {
@@ -82,6 +88,16 @@ class Functionality extends Component {
     this.handleToggle(e);
   };
 
+  handleStrike = (id) => {
+    let temp_items = this.state.todoitems.map((item) => {
+      if (item.id === id) {
+        item.done = !item.done;
+      }
+      return item;
+    });
+    this.setState({ todoitems: temp_items });
+  };
+
   render() {
     return (
       <div className="wrapper">
@@ -95,6 +111,7 @@ class Functionality extends Component {
           toggle={this.state.toggle}
           handleDelete={this.handleDelete}
           searchValue={this.state.searchValue}
+          handleStrike={this.handleStrike}
         />
         <Textarea
           handleExchange={this.handleExchange}

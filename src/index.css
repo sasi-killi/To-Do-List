@@ -1,13 +1,19 @@
 .list-container{
   display: flex;
-  background-color: black;
-  border-radius: 15px;
-  padding: 10px;
-  margin-bottom: 10px;
+  /*animation: slide 1s cubic-bezier(.53,.16,.43,.79) forwards;*/
+}
+.remove-animation{
+  animation: slide 1s cubic-bezier(.53,.16,.43,.79) forwards;
 }
 .list {
   margin-right: auto;
-  color: white;
+  color: #000000;
+  border: 1px solid black;
+  background-color: #cccccc;
+  width: 80%;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 button{
   margin: 10px;
@@ -17,15 +23,17 @@ button{
   padding: 0px 1em;
   color: white;
   cursor: pointer;
+  box-shadow: inset;
+  border: none;
 }
 button:hover{
-  background-color: black;
+  background: #000000;
 }
 .done{
-background-color: green;
+background-color: #00b359;
 }
 .remove{
-  background-color: red;
+  background-color:  #ff3333;
 }
 .wrapper{
   display: flex;
@@ -43,9 +51,11 @@ background-color: green;
 }
 .input-box{
   width: 100%;
+  border-radius: 15px;
+  padding-top: 10px;
 }
 .Add-Button{
-  background-color: brown;
+  background-color: #00b359;
   margin-left: 10px;
 }
 .text-container{
@@ -57,23 +67,48 @@ background-color: green;
 .title-bar h1{
   margin: auto;
 }
-.linethrough p {
-  text-decoration: line-through black 4px;
+.linethrough {
+  text-decoration: line-through #000000 2px;
 }
 .list p:first-child{
  text-align: justify;
 }
 .App{
   padding: 2em;
-  background-color: grey;
+  background-color: transparent;
 }
 .edit{
   background-color: blueviolet;
 }
 body{
   margin: 0px;
-  background-color: grey;
+  background: linear-gradient(45deg, #000000, #4d0026);
 }
 .title-bar h1{
   color: white;
+}
+.list:hover, .search-box:hover, .input-box:hover {
+  animation: zoom 0.2s forwards;
+}
+
+.button-container{
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  background-color: #404040;
+  border-radius: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 15%;
+  /*flex-wrap: wrap;*/
+}
+
+@keyframes zoom {
+  from{}
+  to{transform: scale(1.01); }
+}
+
+@keyframes slide {
+  from{}
+  to{transform: translateX(calc(100% + 200px))}
 }

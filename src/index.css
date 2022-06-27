@@ -143,4 +143,7 @@ body{
   .Add-Button{
     margin: 10px;
   }
+  .App{
+    padding: 5px 0px;
+  }
 }
